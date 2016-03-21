@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://fiddle.jshell.net/09whn82g/2/show/light/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  
+  
+
+  
+  
+  
+
+  
+
+  <script type="text/javascript" src="jquery-2.1.0.js"></script>
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" type="text/css" href="result-light.css">
+  
+
+  
+
+  <style type="text/css">
+    html,body{
+    margin: 0;
+    padding: 0;
+    color:tomato;
+   
+}
+body{
+    font-size:14px;
+    line-height:1.4em;
+   background: rgba(255,255,255,1);
+    opacity:0.8;
+   
+}
+a{
+    color:red;
+    cursor:pointer;
+}
+
+input[type="text"]{
+    margin-top:20px;
+    font-size:20px;
+    color:tomato;
+     margin: 130px 0px 40px 40px;
+    border-radius:10px;
+    -web-border-radius:10px;
+    -moz-border-radius:10px;
+    position:relative;
+    
+}
+table{
+    border:1px solid tomato;
+    margin-top:20px;
+    padding:5px;
+    margin: 0px 0px 40px 40px;
+    background-color:black;
+    border-radius:5px;
+    -web-border-radius:5px;
+    -moz-border-radius:5px;
+    width:50%;
+  
+}
+tr:first{
+    border-bottom:solid 1px tomato;
+}
+td{
+    cursor:pointer;
+    padding:15px;
+    text-align:center;
+    
+}
+
+.strikeList{
+    text-decoration:line-through;
+    color:yellow;
+     opacity:0.6;
+    
+}
+button{
+    outline:none;
+    color:tomato;
+    margin-left:3%;
+    
+}
+
+
+
+  </style>
+
+  <title></title>
+
+  
+    
+
+
+
+
+<script type="text/javascript">//<![CDATA[
+$(window).load(function(){
+/* on press of enter gets addedto the table*/  
+var randomNo = 0;
+$('#inputText').keyup(function(e){
+   if(e.keyCode===13){	
+   addRow();
+   }
+});
+// add new row 
+function addRow(){
+    
+    	var newVal =$('#inputText').val();
+        randomNo++;
+        var IsCompleted = false;
+       // alert(randomNo);
+        $('#TodoList').append('<tr><td>'+randomNo+'</td><td>'+newVal+'</td><td id="completed">'+IsCompleted+'</td><td><a>X</a></td></tr>');
+        $('#inputText').val('');
+    
+}
+
+/* close button for the row */
+$(document).on('click','a',function(e){
+e.preventDefault();
+   
+    $(this).closest('tr').fadeOut();
+	
+});
+
+
+/* strike tr of on click */
+$('#TodoList').on('click','tr',function(){
+	$(this).addClass('strikeList');
+    
+    
+});
+
+/* on click of button add row */
+$('#addButton').click(function(){
+	addRow();
+});
+
+
+
+});//]]> 
+
+</script>
+
+  
+<style type="text/css"></style></head>
+
+<body>
+  <input type="text" placeholder="type list" id="inputText">
+<button id="addButton">Add List</button>
+<br><br>
+<table id="TodoList">
+     <tbody><tr> 
+    <th> ID </th><th> Subject </th><th> IsCompleted </th>
+    </tr>
+</tbody></table>
+
+
+  
+
+
+
+
+</body></html>

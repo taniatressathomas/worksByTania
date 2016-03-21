@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Directed Graph With dagre-d3 </title>
+  <script type='text/javascript' src="dagre-d3.js"></script>
+  <script type='text/javascript' src="d3.v3.min.js"></script>
+  
+  <style type='text/css'>
+    body {
+    font: 300 14px 'Helvetica Neue', Helvetica;
+    font-weight: bold;
+    font-size: 30px;
+    overflow-x: scroll;
+    overflow-y:scroll;
+  
+   }
+
+svg {
+  border: 3px solid #F0F8FF;
+
+  background-color: #F0F8FF;
+}
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon {
+  stroke: #333;
+  fill: rgba(34,59,74,.3);
+  stroke-width: 3px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.edgePath path.path {
+  stroke: #333;
+  fill: #333;
+  stroke-width: 5px;
+ shape-rendering: optimizeSpeed;
+}
+line.linecap{
+
+}
+
+g.rectStyle > rect{
+     fill: #ccc;
+   /*  rx:10px;
+     ry:10px;*/
+     padding:20px;
+    
+}
+.rectBorder{
+    
+    white-space: nowrap;
+    margin:10px;
+    padding:10px;
+    border-radius:10px;
+    
+}
+
+.rectBorder div.status{
+    background-color: #F5F5F5;
+    padding:40px;
+    padding-top:10px;
+    padding-left:10px;
+    font-weight:normal;
+    margin-bottom:10px;
+    border:solid 2px #000;
+    border-radius:10px;
+    font-size:20px;
+    width:350px;
+   
+}
+.details{
+  font-weight: bold;
+  padding-top:10px;
+  font-size:25px;
+  padding-bottom:30px;
+  color:#000;
+}
+
+.time{
+  color:#000;
+  padding-left: 20px;
+  padding-bottom:20px;
+}
+.status{
+  color:#999;
+}
+arrowhead{
+  stroke-linejoin:round;
+}
+
+  </style>
+  
+
+
+
+<script type='text/javascript'>//<![CDATA[
+window.onload=function(){
+
+  function createNode(g, name, children,type,dept) {
+      
+        g.setNode(name, { shape: "rect",  labelType: "html",label: getHTML(name, children,type,dept),class: "rectStyle", id:name, "rank": "min" });
+      
+  }
+  
+
+  var g = new dagreD3.graphlib.Graph();
+  g.setGraph({
+    nodesep: 70,
+    edgeSep : 100,
+    ranksep: 200,
+    rankdir: "LR",
+    marginx: 20,
+    marginy: 20
+  }).setGraph;
+
+
+
+  function getHTML(name, children,type,dept) {
+      if(children) {
+          var myhtml = "<div>";
+          myhtml += "<div>"+type+"</div>";
+          myhtml += "<div class=rectBorder>";
+          myhtml += "<div class=status>"+dept+"<div class='details'>"+name+"</div>";
+          myhtml+=  "<div class='time'>30/03/2015 10:02:12</div>";
+          myhtml+=  "<div class='time'>30/03/2015 10:02:12</div></div>";
+          myhtml += "<div class=status>"+dept+"<div class='details'>"+name+"</div>";
+          myhtml += "<div class='time'>30/03/2015 10:02:12</div>";
+          myhtml += "<div class='time'>30/03/2015 10:02:12</div></div>";
+          myhtml += "</div></div>";
+          return myhtml;
+      }else {
+          var html = "<div>";
+          html += "<div>"+type+"</div>";
+          html += "<div class=rectBorder>";
+          html += "<div class=status>"+dept+"<div class='details'>"+name+"</div>";
+          html += "<div class='time'>30/03/2015 10:02:12</div>";
+          html += "<div class='time'>30/03/2015 10:02:12</div></div>";
+          html += "</div>";
+          return html;
+      }
+    }
+  
+    
+    createNode(g, "John Doe", 2,"abc","abc");
+    createNode(g, "John Abraham", 2,"abc","abc");
+    createNode(g, "Richard Allen", 2,"abc","abc");
+    createNode(g, "Rick Doe",false,"abc","abc");
+    createNode(g, "Jane Doe",2,"abc","abc");
+
+    createNode(g, "Jane Rick",2,"abc","abc");
+
+    createNode(g, "John Anderson",false,"abc","abc");
+    createNode(g, "Gillian Brooks",false,"abc","abc");
+    
+    
+   // Set some general styles
+g.nodes().forEach(function(v) {
+  var node = g.node(v);
+  node.rx = node.ry = 5;
+});   
+
+g.setEdge("John Doe", "John Abraham",  { arrowhead: "normal" ,lineInterpolate: 'bundle' });
+g.setEdge("John Doe", "Richard Allen", { arrowhead: "normal",lineInterpolate: 'bundle'  });
+g.setEdge("John Doe", "Rick Doe", { arrowhead: "normal",lineInterpolate: 'bundle'  });
+
+g.setEdge("John Abraham", "Jane Doe", { arrowhead: "normal" ,lineInterpolate: 'bundle' });
+g.setEdge("John Abraham", "Jane Rick", { arrowhead: "normal" ,lineInterpolate: 'bundle' });
+
+g.setEdge("Richard Allen", "Jane Doe", { arrowhead: "normal",lineInterpolate: 'bundle'  });
+g.setEdge("Richard Allen", "Jane Rick", { arrowhead: "normal",lineInterpolate: 'bundle'  });
+
+g.setEdge("Rick Doe", "Jane Doe", { arrowhead: "normal" ,lineInterpolate: 'bundle' });
+g.setEdge("Rick Doe", "Jane Rick", { arrowhead: "normal" });
+
+g.setEdge("Jane Doe", "John Anderson", { arrowhead: "normal" ,lineInterpolate: 'bundle' });
+g.setEdge("Jane Doe", "Gillian Brooks", { arrowhead: "normal" ,lineInterpolate: 'bundle' });
+
+/*g.setEdge("Jane Doe", "Gillian Brooks", {
+  style: "stroke-linejoin: round;stroke: #f66; stroke-width: 3px;"
+});*/
+
+var svg = d3.select("svg"),
+    inner = svg.select("g");
+
+var rect = svg.selectAll("rect");
+var text = rect.selectAll("text").append("text");
+
+var zoom = d3.behavior.zoom().on("zoom", function() {
+    inner.attr("transform", "translate(" + d3.event.translate + ")" +
+                                "scale(" + d3.event.scale + ")");
+  });
+svg.call(zoom);
+
+// Create the renderer
+var render = new dagreD3.render();
+
+// Add our custom arrow (a hollow-point)
+render.arrows().hollowPoint = function normal(parent, id, edge, type) {
+  var marker = parent.append("marker")
+    .attr("id", id)
+    .attr("viewBox", "0 0 10 10")
+    .attr("refX", 9)
+    .attr("refY", 5)
+    .attr("markerUnits", "strokeWidth")
+    .attr("markerWidth", 8)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto");
+
+  var path = marker.append("path")
+    .attr("d", "M 0 0 L 10 5 L 0 10 z")
+    .style("stroke-width", 1)
+    .style("stroke-dasharray", "1,0")
+    .style("fill", "#fff")
+    .style("stroke", "#333");
+  dagreD3.util.applyStyle(path, edge[type + "Style"]);
+};
+    
+    render.edgeInterpolate = 'linear';
+// Run the renderer. This is what draws the final graph.
+render(inner, g);
+
+// Center the graph
+var initialScale = 0.25;
+zoom.translate([(svg.attr("width") - g.graph().width * initialScale) / 2, 20]);
+  zoom.scale(initialScale)
+  zoom.event(svg);
+svg.attr('height', g.graph().height * initialScale + 200);
+}//]]> 
+
+</script>
+
+</head>
+<body>
+  <body>
+     <svg id="svg-canvas" width="1350" height="700">
+          <g transform="translate(10, 30)" />
+      </svg>
+    
+</body>
+  
+</body>
+
+</html>
+

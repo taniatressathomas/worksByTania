@@ -1,0 +1,59 @@
+/* Styles for table */
+.myTable{
+  border: solid 1px #333;
+  border-collapse:collapse;
+  border-spacing:0;
+  font:normal 15px Arial, sans-serif;
+  
+}
+
+
+.myTable th{
+  background-color:#777;
+  border:solid 1px #999;
+  color:#fff;
+  padding:13px;
+  text-align:left;
+  text-shadow:0px 0px 1px #fff;
+ 
+}
+
+.myTable td{
+  border:solid 1px #999;
+  color:#333;
+  padding:10px;
+  text-shadow:1px 1px 1px #fff;
+}
+
+/* styling for on hover of table*/
+.highlight{
+  overflow:hidden;
+  z-index:1;
+}
+
+.highlight th, .myTable.highlight td{
+  position:relative;
+} 
+
+
+.highlight td:hover::before{
+  background-color:#ccc;
+  content:'\00a0';
+  height:100%;
+  left: -5000px;
+  position: absolute;
+  top: 0;
+  width: 10000px;
+  z-index: -1;  
+  
+}
+.highlight td:hover::after{
+    background-color: #ccc;
+    content:'\00a0';
+    height: 10000px;
+    left: 0;
+    position: absolute;
+    top: -5000px;
+    width: 100%;
+    z-index: -1;
+}

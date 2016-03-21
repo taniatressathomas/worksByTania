@@ -1,0 +1,398 @@
+* {
+/* With these codes padding and border does not increase it's width and gives intuitive style.*/
+
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+
+}   
+
+body {
+		background-image:url('images/background.png');
+		font:.8em/1.5em Verdana, Arial, san-serif;
+		color: #999;
+		margin:0;
+		padding:0;
+		padding: 50px 50px; 
+		
+	}
+
+/* image replacement */
+#imageReplacement {
+	background:url(images/contactMe.png) no-repeat;
+	/*width:435px;*/
+	height:235px;
+	margin-top:0;
+	padding:0;
+	font: 0/0;
+  	text-shadow: none;
+  	color: transparent;
+  	margin-bottom: 20px;
+}
+
+/* Navigation Bar */
+#nav {
+	list-style:none;
+	font-weight:bold;
+	margin-bottom:20px;
+	float:left;
+	width:100%;
+}
+#nav li {
+	float:left;
+	margin-right:8px;
+	position:relative;
+}
+#nav a {
+	display:block;
+	padding:5px;
+	color:#CF5C3F;
+	background:#666;
+	text-decoration:none;
+}
+#nav a:hover {
+	color:#CF5C3F;
+	background:maroon;
+	text-decoration:underline;
+}
+
+/* dropdown styling*/
+
+#nav ul {
+	list-style:none;
+	background:#eee;
+	position:absolute;
+	left:-9999px;
+}
+#nav ul li {
+	padding-top:1px;
+	float:none;
+}
+#nav ul a {
+	white-space:nowrap; 
+}
+#nav li:hover ul {  /* Display the dropdown */
+	left:0;  /* brings back on-screen */
+}
+#nav li:hover a {
+	background:maroon;
+	text-decoration:underline;
+}
+#nav li:hover ul a {
+	text-decoration:none;
+}
+#nav li:hover ul li:hover a {
+	background:#eee;
+}
+
+/* using child/combinator selectors */
+body > div {
+
+	margin: 0 auto;
+	width: 100%;
+	min-width: 150px; 
+	min-height:800px;
+	padding: 0;
+	border-radius: 10px;
+	-moz-border-radius:  10px; 
+	-webkit-border-radius:  10px; 
+	behavior: url(PIE.htc);
+}
+h6	{ 
+	font-size:8px;
+	font-style: italic;
+	}
+
+section h2 {
+	margin: 0 0 5px 0;
+	color: #CF5C3F;
+}
+section > h1 {
+	
+	margin-bottom: 20px;
+	color:#CF5C3F;
+	text-align: center;
+	text-shadow:-2px 4px 1px #ccc;
+	
+}
+
+
+
+/* General form styling */
+
+form {
+	width: 55%;
+	margin-left:8em;
+	padding-top: 1em;
+}
+
+form header {
+	margin:0 0 20px 0;
+}
+
+form header div {
+	font-size: 90%;
+	color: orange;
+}
+
+
+form header a,form header h2 {
+	margin: 0 0 5px 0;
+	color: #CF5C3F;
+}
+
+form header a:hover ~ div{
+	color:red;}
+
+form > fieldset {
+	position:relative;
+	/* if we dont float it wont expand to encompass the floated list itmes */
+	float: both; 
+	clear: left;
+	margin: 0 0 1em 0;
+	padding: 0 0 1em 0;
+	border:2px solid #ccc;
+
+
+}
+
+
+form > fieldset > legend {
+	/* all legends have varied amounts of padding between browsers,
+	 so we take out padding by making it 0  that way the legend and labels 
+	 line up if labels are right aligned*/
+	padding: 0;
+	color: #CF5C3F;
+	font-weight: bold;
+
+}
+
+form > fieldset p {
+
+	padding:1em 1em 0 1em;
+
+	/* in order to contain its children we must float the parent */
+	float: left;
+	clear: left;
+	width: 100%;
+	/*padding-bottom: .2em;*/
+
+}
+
+.button {
+	float: none;
+	width: auto;
+	border: 0 none #fff;
+	padding-top: 1.5em;
+	background-color: transparent;
+
+
+}
+.button input {
+	background: #A9AAA7;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#A9AAA7), to(#3F3F3B));
+	background: -webkit-linear-gradient(#A9AAA7, #3F3F3B);
+	background: -moz-linear-gradient(#A9AAA7, #3F3F3B);
+	background: -ms-linear-gradient(#A9AAA7, #3F3F3B);
+	background: -o-linear-gradient(#A9AAA7, #3F3F3B);
+	background: linear-gradient(#A9AAA7, #3F3F3B);
+	-pie-background: linear-gradient(#A9AAA7, #3F3F3B);
+	behavior: url(PIE.htc);
+
+	color: #CF5C3F;
+	margin-right: 10em;
+	margin-bottom: 2em;
+	width: 10em;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border:1px solid #fff;
+	cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+	
+}
+
+label {
+	
+	float: left;
+	width: 10em;
+	margin-right: 1em;
+	text-align: left;
+	display: inline-block;
+
+}
+
+input, textarea {
+	border-top: 1px solid #CF5C3F;
+	border-left: 1px solid #ccc;
+	background: #fff;
+	width: 40em;
+	border-right-color: #978eba;
+	border-bottom-color: #978eba;
+	border-radius:5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	behavior: url(PIE.htc);
+	box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+}
+
+input[required] {
+background-color:gold;
+}
+
+textarea {
+	width: 100%;
+	color:#ccc;
+}	
+
+ 
+fieldset input:hover { border-color : #000; }
+fieldset input:active, input:focus {
+ border-color : #900; 
+ box-shadow: 0 0 3px #aaa;
+}
+
+form div p input{
+	padding: 0.25em;
+	border : 2px double #010;
+	font : bold 92% Tahoma, Verdana, Arial, sans-serif; 
+	text-transform : uppercase;
+
+
+}
+#primary label {
+  width:30%;
+  display: inline-table;
+  margin: 5px;
+
+}
+
+#primary input {
+  width:60%;
+  display: inline-table;
+  margin: 5px;
+}
+
+#footer {
+	width:100%;
+	margin:80px auto;
+	position:relative;	
+	margin-bottom: 30px;
+}
+/* pseudo Elements example with image*/
+#pic {
+	position:absolute;
+	top:0;
+	left:50%;
+	margin-left:-115px;
+}
+#left, #right { width:48%; }
+#left { float:left; }
+#right { float:right; }
+		
+#left:before, #right:before {
+	content:"";
+	width:114px;
+	height:185px;
+}
+#left:before {
+	float:right;
+}
+#right:before {
+	float:left;
+}
+#left p:first-child {
+	color:skyblue;
+}
+#right p:first-child {
+	color:pink;
+}
+
+/* Animation */
+.animate { 
+		margin-left: 100px;
+		animation-name:moveIt;
+		-moz-animation-name:moveIt;
+		-webkit-animation-name:moveIt;
+		animation-duration:8s; 
+		-moz-animation-duration:8s; 
+		-webkit-animation-duration:8s; 
+		animation-timing-function:ease-in;
+		-moz-animation-timing-function:ease-in;
+		-webkit-animation-timing-function:ease-in;
+		animation-iteration-count:infinite;
+		-moz-animation-iteration-count:infinite;
+		-webkit-animation-iteration-count:infinite;
+		animation-fill-mode:forwards;
+		-moz-animation-fill-mode:forwards;
+		-webkit-animation-fill-mode:forwards;
+		animation-direction:alternate;
+		-moz-animation-direction:alternate;
+		-webkit-animation-direction:alternate;
+
+	}
+
+	@keyframes moveIt { 0%{transform:translateX(0);} 100%{transform:translateX(600px);}
+	}
+
+	@-moz-keyframes moveIt { 0%{transform:translateX(0);} 100%{transform:translateX(600px);}
+	}
+
+	@-webkit-keyframes moveIt { 0%{transform:translateX(0);} 100%{transform:translateX(600px);}
+	}
+
+
+
+/* for devices with max-width 1000px */
+
+@media (max-width: 1000px){
+
+		section h2{
+			font-size:16px;
+		}
+
+		form {
+			width: 100%;
+			margin:0 auto;
+			padding-top: 1em;
+			font-size: 15px;
+		}
+		#primary label {
+		  width:100%;
+		}
+
+		#primary input {
+		  width:100%;
+		  padding: .8em;
+		  font-size: 20px;
+		}
+		.button input {
+			margin-right: 8em;
+			margin-bottom: 2em;
+			width: 5em;
+		}
+		
+}
+
+/* for devices with max-width 500px */
+@media (max-width: 500px){
+	body {
+		padding: 10px 10px; 
+	}
+	form {
+		width: 100%;
+		margin:0 auto;
+		padding-top: 1em;
+	}
+	#primary input {
+		  padding: .9em;
+		  font-size: 20px;
+		}
+	.button input {
+		width: 100%;
+	}
+
+}
+
+
+

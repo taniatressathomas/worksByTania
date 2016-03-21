@@ -1,0 +1,129 @@
+/* for devices with max width 1000px */
+@media only screen and (max-width: 1000px){
+	/* ----------styling the input section at this screen size------------ */
+	#input-section .input-field-box{
+		margin-top:30%;
+		width:70%;
+	}
+	
+	/* ----------styling the experience section at this screen size------------ */
+	 #experience-section .circle-text {
+	
+    	width:40%;
+   	}
+   #experience-section .circle-text span{
+		font:15px/1.9em 'Open Sans', sans-serif;
+		font-weight:bold;
+	}
+	#triangle-section h2,#stanza-logo .stanza-logo-headline, #circle-section .circle-headline{
+		font:25px/1.9em sans-serif;
+	}
+}
+
+/* for devices with max width 800px */
+@media only screen and (max-width: 800px) {
+ 
+ /* ----------styling the header section at this screen size------------ */
+	header .banner-text hr{
+		 width:20%;
+	 }
+	 
+	 /* ----------styling the responsive grid section at this screen size------------ */
+	#responsive-grid-section {
+		height:1700px;
+		
+	}
+	
+	
+	#responsive-grid-section .column-layout h1{
+		font:30px/1.9em sans-serif;
+		letter-spacing:1px;
+		
+	}
+	#responsive-grid-section .column-layout h3{
+		font:12px/1.9em sans-serif;
+	}
+	
+	/* ----------styling the input section at this screen size------------ */
+	#input-section h1{
+		font:35px/1.9em 'Open Sans', sans-serif;
+		
+	}
+	#input-section .input-field-box{
+		margin-top:40%;
+		width:80%;
+	}
+	
+	#input-section .input-field-box:before{
+		 padding-top: 30%;
+	}
+	
+	/* ----------styling the experience section at this screen size------------ */
+	 #experience-section .circle-text {
+	
+    	width:60%;
+   	}
+  /* ----------styling the footer section at this screen size------------ */
+  footer{
+   	height:100px;
+   }
+   footer span{
+   	
+	font:40px/1.9em 'Open Sans', sans-serif;
+ }
+	
+}
+
+/* for devices with max width 480px */
+@media only screen and (max-width: 480px) {
+	
+	/* ----------styling the dead center section at this screen size------------ */
+	#dead-center .rectangle-box{
+		width:300px;
+	}
+	
+	/* ----------styling the triangle section at this screen size------------ */
+	#triangle-section .right-triangle{
+		width: 50%;
+		padding-bottom: 45%;
+	}
+		
+	#triangle-section .right-triangle:after{
+		border-right: 500px solid transparent;
+   	    border-bottom: 500px solid rgba(34,193,238,1);
+	}
+	
+	#triangle-section h2,#stanza-logo .stanza-logo-headline, #circle-section .circle-headline{
+		font:15px/1.9em sans-serif;
+	}
+	#triangle-section h2{
+		margin-top:10px;
+	}
+	
+	/* ----------styling the input section at this screen size------------ */
+	#input-section h1{
+	font:30px/1.9em 'Open Sans', sans-serif;
+	letter-spacing:-1px;
+	}
+	
+	#input-section .input-field-box{
+		margin-top:60%;
+		width:90%;
+	}
+	#input-section .input-field-box:before{
+		 padding-top: 40%;
+	}
+	#input-section p{
+ 	
+ 	font:18px/1.9em 'Open Sans', sans-serif;
+  }
+ 
+	/* ----------styling the expereince section at this screen size------------ */
+ #experience-section .circle-text {
+	
+    width:90%;
+   }
+   
+  
+	
+}

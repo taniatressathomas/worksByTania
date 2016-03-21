@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://fiddle.jshell.net/vs4vijay/HJema/show/light/ -->
+<html><head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <script type="text/javascript" src="files/jquery.min.js"></script>
+  <script type="text/javascript" src="files/jquery-ui.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="files/result-light.css">
+  <link rel="stylesheet" type="text/css" href="files/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="files/ui.jqgrid.css">
+  <script type="text/javascript" src="files/grid.locale-en.js"></script>
+  <script type="text/javascript" src="files/jquery.jqGrid.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+  <script type="text/javascript" src="files/lou-multi-select-05449b3/js/jquery.multi-select.js"></script>
+  <link rel="stylesheet" type="text/css" href="files/lou-multi-select-05449b3/css/multi-select.css">
+
+   <script type="text/javascript" src="multiselect.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="multiselect.css">
+ </script>
+  <style type="text/css">
+  </style>
+  <title>jqGrid</title>
+
+<script type="text/javascript">//<![CDATA[
+$(window).load(function(){
+var myData = [{
+    col1: "ABC",
+    col2: 12,
+    col3:3,
+    col4:8,
+    col5:0,
+    col6:1,
+    col7:0,
+    col8:2,
+    col9:"6 Hrs 15mins",
+    col10:3,
+    col11:"8Hrs 20min",
+    col12:0.5,
+    col13:1.9,
+    col14:5
+}, {
+    col1: "ABC",
+    col2: 12,
+    col3:3,
+    col4:8,
+    col5:0,
+    col6:1,
+    col7:0,
+    col8:2,
+    col9:"6 Hrs 15mins",
+    col10:3,
+    col11:"8Hrs 20min",
+    col12:0.5,
+    col13:1.9,
+    col14:5
+}, {
+    col1: "ABC",
+    col2: 12,
+    col3:3,
+    col4:8,
+    col5:0,
+    col6:1,
+    col7:0,
+    col8:2,
+    col9:"6 Hrs 15mins",
+    col10:3,
+    col11:"8Hrs 20min",
+    col12:0.5,
+    col13:1.9,
+    col14:5
+},{
+    col1: "ABC",
+    col2: 12,
+    col3:3,
+    col4:8,
+    col5:0,
+    col6:1,
+    col7:0,
+    col8:2,
+    col9:"6 Hrs 15mins",
+    col10:3,
+    col11:"8Hrs 20min",
+    col12:0.5,
+    col13:1.9,
+    col14:5
+},{
+    col1: "ABC",
+    col2: 12,
+    col3:3,
+    col4:8,
+    col5:0,
+    col6:1,
+    col7:0,
+    col8:2,
+    col9:"6 Hrs 15mins",
+    col10:3,
+    col11:"8Hrs 20min",
+    col12:0.5,
+    col13:1.9,
+    col14:5
+},{
+    col1: "ABC",
+    col2: 12,
+    col3:3,
+    col4:8,
+    col5:0,
+    col6:1,
+    col7:0,
+    col8:2,
+    col9:"6 Hrs 15mins",
+    col10:3,
+    col11:"8Hrs 20min",
+    col12:0.5,
+    col13:1.9,
+    col14:5
+},{
+    col1: "ABC",
+    col2: 12,
+    col3:3,
+    col4:8,
+    col5:0,
+    col6:1,
+    col7:0,
+    col8:2,
+    col9:"6 Hrs 15mins",
+    col10:3,
+    col11:"8Hrs 20min",
+    col12:0.5,
+    col13:1.9,
+    col14:5
+},{
+    col1: "ABC",
+    col2: 12,
+    col3:3,
+    col4:8,
+    col5:0,
+    col6:1,
+    col7:0,
+    col8:2,
+    col9:"6 Hrs 15mins",
+    col10:3,
+    col11:"8Hrs 20min",
+    col12:0.5,
+    col13:1.9,
+    col14:5
+},{
+    col1: "ABC",
+    col2: 12,
+    col3:3,
+    col4:8,
+    col5:0,
+    col6:1,
+    col7:0,
+    col8:2,
+    col9:"6 Hrs 15mins",
+    col10:3,
+    col11:"8Hrs 20min",
+    col12:0.5,
+    col13:1.9,
+    col14:5
+},{
+    col1: "Total",
+    col2: 12,
+    col3:3,
+    col4:8,
+    col5:0,
+    col6:1,
+    col7:0,
+    col8:2,
+    col9:"6 Hrs 15mins",
+    col10:3,
+    col11:"8Hrs 20min",
+    col12:0.5,
+    col13:1.9,
+    col14:5
+}];
+
+
+$("#list").jqGrid({
+    datatype: "local",
+    colNames: ["col1", "col2","col3","col4","col5","col6","col7","col8","col9","col10","col11","col12","col13","col14"],
+    colModel: [{
+        name: "col1",
+        index: "col1",
+        sorttype: "string",
+        align:"center"
+    }, {
+        name: "col2",
+        index: "col2",
+        align:"center"
+    },{
+        name: "col3",
+        index: "col3",
+        align:"center"
+    },{
+        name: "col4",
+        index: "col4",
+        align:"center"
+    },{
+        name: "col5",
+        index: "col5",
+        align:"center"
+    },{
+        name: "col6",
+        index: "col6",
+        align:"center"
+    },{
+        name: "col7",
+        index: "col7",
+        align:"center"
+    },{
+        name: "col8",
+        index: "col8",
+        align:"center"
+    },{
+        name: "col9",
+        index: "col9",
+        align:"center"
+    },{
+        name: "col10",
+        index: "col10",
+        align:"center"
+    },{
+        name: "col11",
+        index: "col11",
+        align:"center"
+    },{
+        name: "col12",
+        index: "col12",
+        align:"center"
+    },{
+        name: "col13",
+        index: "col13",
+        align:"center"
+    },{
+        name: "col14",
+        index: "col15",
+        align:"center"
+    }],
+    caption: " ",
+    pager: '#pager',
+    search: true, 
+    shrinkToFit: true, 
+    forceFit: true, 
+    height: 'auto',
+    autowidth: true,  
+    pagerpos: 'center',
+    resizable: true,
+    key:true,
+    fixed: true,
+    multiselect: true,
+    data: myData
+    
+});
+//var h = $('#container').height();
+$("#list").jqGrid("setGridHeight","380px");
+
+
+
+$("#pager_left").html("");
+$("#pager_right").prepend("");
+
+$("#pager_right").prepend($("#list_pager_left").find("table").css({float: "right"}));
+$("#pager_left").html("<table class='customrows' id='rowsPewrPage'><tr><td>Rows Per Page</td><td><a href='#' style='font-weight:bold'>25</a></td><td><a href='#'>50</a></td><td><a href='#'>75</a><td><a href='#'>100</a></td></td><td><a href='#'>150</a></td></tr></table>");
+$("#pager_right").prepend(" <div class='rowsCount'> </div>");
+$('#pager_right').find('.rowsCount').not(':first').remove();
+
+
+$(".ui-jqgrid-titlebar").hide();
+
+$('#my-select').multiSelect();
+
+
+$('#my-select').on('change', function() {
+  if($(this).val() == 'elem11'){
+    $('#my-select').multiSelect('select_all');
+  }
+});
+
+$('#clear').click(function(){
+  $('#my-select').multiSelect('deselect_all');
+  $('.dropdown').val('');
+});
+
+
+
+$('#fromDate').datepicker();
+$('#toDate').datepicker();
+//});
+});//]]> 
+
+</script>
+<style type="text/css">
+html{
+  height:100%!important;
+  
+}
+    body{
+        margin-top:-10px!important;
+        background-color: #ccc;
+        font-family: "Lucida Grande"!important;
+        font-size:1em;
+        height: 100%!important;
+        width: 100%!important;
+       
+}
+
+    table td input{
+        width:200px ;
+        margin-right:40px;
+        border-radius: 4px;
+        border:1px solid #ccc;
+    }
+    table td label{
+      margin-right:20px;
+    }
+    table td {
+         padding-bottom: 20px;
+         margin-top: 20px;
+         border-radius: 5px;
+
+    }
+    
+ 
+    #search,#clear{
+         width:65px;
+         height: 22px;
+        border-radius: 5px;
+        background: linear-gradient(to bottom,#6ec8ec 0,#3293bb 100%);
+        border:1px solid #6ec8ec;
+       margin-right:5px;
+       color:#222;
+        padding: 3px 13px;
+    }
+    #search{color:#fff;}
+  #clear{
+     margin-left: 10px;
+     width: 58px;
+    background: linear-gradient(to bottom,#FCFCFC 0,#CFCFCF 100%)!important;
+    border: 1px solid #AAA;
+  }
+    #export{
+        margin-left:950px;
+        color: #4798fd;
+        cursor:pointer;
+        font-size: 12px;
+        text-decoration: none;
+
+    }
+   
+    
+    .ui-widget-content {
+    border: 1px solid #ccc;
+  }
+
+    .ms-container .ms-list{
+      height:65px!important;
+    }
+    .ms-container .ms-selectable li.ms-elem-selectable, .ms-container .ms-selection li.ms-elem-selection{
+      font-size: 10.5px;
+      text-align:center;
+    }
+    .ui-jqgrid .ui-pg-input {
+      width: 20px;
+    }
+   div.ui-datepicker{
+   font-size:11.8px;
+  }
+  label{
+    font-size: 12px;
+  }
+  
+#advSearch{
+    background-color: #e6e6e6;
+    border: 1px solid #d6d6d6;
+    height: 25px;
+    padding: 10px 5px 1px 10px;
+    width: 97%;
+  }
+
+#advSearch h5{
+  color: #8F8F8B;
+  font-size: 14px;
+  float: left;
+  font-weight: 400;
+  margin-top: -2px;
+}
+
+.ui-jqgrid tr.ui-row-ltr td{
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-radius:0px!important; 
+}
+.ui-jqgrid tr.jqgrow:last-child{
+  color: #000;
+  font-weight: 900!important;
+}
+.ui-jqgrid tr.jqgrow:last-child input.cbox{
+ display:none;
+}
+.addFont{
+  font-style: bold;
+}
+.customrows {
+    margin: 4px 10px;
+}
+#rowsPewrPage td{
+  padding-left: 10px;
+}
+.ms-container{
+  width:450px;
+}
+.boldText{
+  font-weight: bold!important;
+}
+
+
+
+</style>
+
+  
+</head>
+
+<body>
+<div id="container">
+<div style="margin-left:-10px;background-color:#222;height:41px;margin-bottom:-70px;"></div>
+<div style="margin-left:-4px;background-color:#e6e6e6;border-left:1px solid #e6e6e6;border-right:1px solid #e6e6e6;">
+<div style="background-color:#f1f1f1;margin-bottom:-20px;border-top-left-radius:8px;border-top-right-radius:8px;">
+<h3 style="margin-top:70px;text-align:left;padding:10px;color:gray;font-weight:400;">Dashboard</h3>
+</div>
+<div style="background-color:#f1f1f1;">
+<div id="advSearch">
+  <h5>Search</h5>
+  <div style="float:left;margin-top:-2px;">
+
+                       <a href="#" id="export"></a>
+                       <input type="button" id="clear" value="Clear"/>
+                       <input type="button" id="search" value="Search"/>
+                       
+                   
+  </div> 
+</div>
+</div>
+       <div style="height:85px;background-color:#f1f1f1;padding-top:15px;border-bottom:solid 1px #ccc;margin-bottom:2px;margin-bottom:10px;">
+              
+            
+               <div>
+                      <table style="margin-left:10px;float:left;">
+                      <tr>
+                      <td>
+                        <label class="mylabel">From Date: </label>
+                      </td>
+                      
+                      <td>
+                         <input type="text" placeholder="From Date" id="fromDate" class="dropdown"/>
+                       </td>
+                       <td>
+                        <label class="mylabel">Group: </label>
+                      </td>
+                       </tr>
+                      <tr>
+                       <td>
+                         <label>To Date: </label>
+                       </td>
+                       <td>
+                          <input type="text" placeholder="To Date"  id="toDate" class="dropdown"/>
+                        </td>
+                       
+                        </tr>
+                     </table>
+                </div>
+                <div id="multiselectBlock" style="float:left;"> 
+                       <select multiple="multiple" id="my-select" name="my-select[]" >
+                          <option value="elem11" id="all">All</option>
+                           <option value="elem1">ABC</option>
+                           <option value="elem2">CDE</option>
+                           <option value="elem3">EFG</option>
+                           <option value="elem4">HIJ</option>
+                           <option value="elem5">KLM</option>
+                            <option value="elem6">NOP</option>
+                           
+                       </select>
+                  
+               </div>
+            
+             <!--  <div style="float:left;margin-top:42px;">
+
+                       <a href="#" id="export">Export Data</a>
+                     
+                       <input type="button" id="search" value="Search"/>
+                       <input type="button" id="clear" value="Clear"/>
+                   
+               </div> -->
+         
+
+       </div>
+       <div id="tableGrid" style="width:100%">
+        <table id="list"></table>
+       <div id="pager" style="text-align: center;"></div>
+      </div>
+</div>
+</div>
+</body>
+
+</html>
